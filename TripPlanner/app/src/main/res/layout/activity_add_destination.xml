@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddDestinationActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/addWelcomeMessage"
+            style="@style/welcome_text"
+            android:text="@string/please_fill_this_survey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/titleEditText"
+            style="@style/survey_edit_text"
+            android:autofillHints="@string/enter_the_trips_title"
+            android:ems="10"
+            android:textColor="@color/fontColor"
+            android:hint="@string/enter_the_trips_title"
+            android:inputType="textAutoComplete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addWelcomeMessage" />
+
+
+        <EditText
+            android:id="@+id/latitude"
+            style="@style/survey_edit_text"
+            android:autofillHints="@string/latitude"
+            android:ems="6"
+            android:textColor="@color/fontColor"
+            android:hint="@string/latitude"
+            android:inputType="numberDecimal|numberSigned"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleEditText" />
+
+        <EditText
+            android:id="@+id/longitude"
+            style="@style/survey_edit_text_to_the_right"
+            android:autofillHints="@string/longitude"
+            android:ems="6"
+            android:textColor="@color/fontColor"
+            android:hint="@string/longitude"
+            android:inputType="numberDecimal|numberSigned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleEditText" />
+
+        <EditText
+            android:id="@+id/imgUrl"
+            style="@style/survey_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/enter_a_picture_url"
+            android:ems="10"
+            android:textColor="@color/fontColor"
+            android:hint="@string/enter_a_picture_url"
+            android:inputType="textUri"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/latitude" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/welcome_text_margin_top"
+            android:layout_marginLeft="@dimen/welcome_text_margin_top"
+            android:layout_marginTop="@dimen/welcome_text_margin_top"
+            android:background="@drawable/button_background"
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp"
+            android:paddingEnd="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/recommend_trip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgUrl" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
